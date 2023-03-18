@@ -1,0 +1,32 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Magnet Sim Script By Lennie", "DarkTheme")
+local Tab = Window:NewTab("Auto Farm")
+local Section = Tab:NewSection("Auto Farm")
+Section:NewButton("Auto Farm", "ButtonInfo", function()
+while true do
+local args = {
+    [1] = "1",
+    [2] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Diamond Long Magnet")
+}
+game:GetService("ReplicatedStorage").Events.MagnetEvents.requestGrab:FireServer(unpack(args))
+wait(0.0)
+end
+end)
+Section:NewButton("Auto Sell", "ButtonInfo", function()
+while true do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(135.853, 11.017, -52.618)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(189.142, 10.4, -92.6419)
+wait(5)
+end
+end)
+
+Section:NewButton("Anti-AFK", "ButtonInfo", function()
+while true do
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+   wait(1)
+   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+end
+end)
