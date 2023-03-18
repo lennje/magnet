@@ -6,7 +6,7 @@ Section:NewButton("Auto Farm", "ButtonInfo", function()
 while true do
 local args = {
     [1] = "1",
-    [2] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Diamond Long Magnet")
+    [2] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Golden Long Magnet") -- Put your magnet name between ("")
 }
 game:GetService("ReplicatedStorage").Events.MagnetEvents.requestGrab:FireServer(unpack(args))
 wait(0.0)
